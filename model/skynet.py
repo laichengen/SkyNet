@@ -95,20 +95,20 @@ class SkyNet:
                     break
                 except:
                     continue
-        if len(generate_code) > 1:
-            samples = [{
-                "question": text,
-                "positive": generate_code[-1],
-                "negative": generate_code[-2]
-            }]
-            open('data/rm_train.json', 'w', encoding='utf-8').write(
-                json.dumps(samples, ensure_ascii=False))
-            # 使用RLHF来进行自我纠正
-            if is_correct:
-                model_path = "checkpoints/GPT2"
-                train_path = 'data/rm_train.json'
-                train_rm(train_path, model_path)
-                train_ppo(train_path, model_path)
+            if len(generate_code) > 1:
+                samples = [{
+                    "question": text,
+                    "positive": generate_code[-1],
+                    "negative": generate_code[-2]
+                }]
+                open('data/rm_train.json', 'w', encoding='utf-8').write(
+                    json.dumps(samples, ensure_ascii=False))
+                # 使用RLHF来进行自我纠正
+                if is_correct:
+                    model_path = "checkpoints/GPT2"
+                    train_path = 'data/rm_train.json'
+                    train_rm(train_path, model_path)
+                    train_ppo(train_path, model_path)
 
         else:
             res = self.basemodel.inference(prompt_text)
