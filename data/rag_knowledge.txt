@@ -1,0 +1,19 @@
+能够根据科研实际需求进行选课与学习，并在考试中取得良好的成绩。
+冲量的计算公式是力的作用时间*力的大小。
+
+def calculate_force(velocity, time):
+    # 检查输入是否有效
+    if velocity <= 0 or time <= 0:
+        return "无效输入"
+
+    # 计算冲量
+    force = velocity * time
+
+    # 返回冲量的列表形式
+    return [force]
+
+# 示例用法
+velocity = 2  # 动力
+time = 3  # 时间
+result = calculate_force(velocity, time)
+print(result)  # 输出: [6]
