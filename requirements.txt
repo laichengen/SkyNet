@@ -1,0 +1,7 @@
+datasets==3.2.0
+numpy==2.2.1
+qwen_vl_utils==0.0.8
+Requests==2.32.3
+torch==2.3.0+cu121
+tqdm==4.67.1
+transformers==4.47.1
