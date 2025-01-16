@@ -136,7 +136,7 @@ class Rag():
 
         payload = json.dumps({"q": search_query})
         headers = {
-            'X-API-KEY': 'AIzaSyAx7zyEGmhq-KE4FMylGNsenvsPxn5i5Vw',
+            'X-API-KEY': '****',
             'Content-Type': 'application/json'
         }
 
